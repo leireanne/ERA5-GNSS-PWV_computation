@@ -1,0 +1,4 @@
+# Ignore mat files
+*.mat
+# Don't ignore geoidal undulation:
+!geoid_undulation_EGM08_REDNAP.mat
