@@ -24,9 +24,9 @@ function [p,PWV,Tm] = FUNC_interpolate_integrate_atmosphere(lat_s,lon_s,h_s,fn)
 %    
 
 % ERA5 data.
-load(fn.Geopotential);
-load(fn.Specific_humidity);
-load(fn.Temperature);
+load([fn.dir fn.Geopotential]);
+load([fn.dir fn.Specific_humidity]);
+load([fn.dir fn.Temperature]);
 lat = d2_lat; lon = d1_lon;
 
 %% (2) Find indices for the four nearest grid points.

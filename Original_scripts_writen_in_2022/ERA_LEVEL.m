@@ -1478,7 +1478,7 @@ classdef ERA_LEVEL
             % REDNAP geoid undulations.
             % WARNING! Introduce lat long in deg!
             
-            load('matlab_extracted_data/geoid_undulation_EGM08_REDNAP.mat');
+            load('Data_Input/01_GNSS_station_info/geoid_undulation_EGM08_REDNAP.mat');
             undu_sta = interp2(LON,LAT,undu,lon_sta,lat_sta);
             h_orto = h_elips - undu_sta;
         end 
