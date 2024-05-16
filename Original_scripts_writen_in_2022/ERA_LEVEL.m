@@ -1472,13 +1472,13 @@ classdef ERA_LEVEL
             save('matlab_extracted_data/geoid_undulation_EGM08_REDNAP.mat','undu','LAT','LON');
         end
         
-        function h_orto = elips2ortometricHeight(lat_sta,lon_sta,h_elips)
+        function h_orto = elips2ortometricHeight(lat_sta,lon_sta,h_elips,fn_geoid_model)
             % Convert from elipsoidal to otrometric height using
             % EGM08_REDNAP
             % REDNAP geoid undulations.
             % WARNING! Introduce lat long in deg!
             
-            load('Data_Input/01_GNSS_station_info/geoid_undulation_EGM08_REDNAP.mat');
+            load(fn_geoid_model);
             undu_sta = interp2(LON,LAT,undu,lon_sta,lat_sta);
             h_orto = h_elips - undu_sta;
         end 
