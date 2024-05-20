@@ -5,7 +5,7 @@
 
 %% Input data: filenames.
 % Insert filenames of source data.
-input_fn.dir                = 'Data_input/01_ERA5_z_temp_humid/';
+input_fn.dir                = 'Data_Input/01_ERA5_z_temp_humid/';
 input_fn.Geopotential       = 'ERA5_Geopotential_hourly_2015_2015_Lat_35.00_40.50_Lon_-7.50_-0.75_Lev_600_1000.mat';
 input_fn.Specific_humidity  = 'ERA5_Specific_humidity_hourly_2015_2015_Lat_35.00_40.50_Lon_-7.50_-0.75_Lev_600_1000.mat';
 input_fn.Temperature        = 'ERA5_Temperature_hourly_2015_2015_Lat_35.00_40.50_Lon_-7.50_-0.75_Lev_600_1000.mat';
@@ -25,12 +25,6 @@ addpath(genpath('Original_scripts_writen_in_2022'));
 
 [sta_list_geod,geod_list,xyz] = readGNSSStationCSV(fn_GNSS_coord);
 load(fn_geoid_model);
-
-% Omit Tiou and EPCU because out of our ERA5 data coverage.
-geod_list(41,:) = []; %TIOU
-sta_list_geod(41,:) = [];
-geod_list(16,:) = []; %EPCU
-sta_list_geod(16,:) = [];
 
 %% Computations
 for i=1:size(geod_list,1)
